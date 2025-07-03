@@ -31,7 +31,7 @@ func RunUploadTest() {
 	elapsed := time.Since(start)
 
 	// Calculate upload speed in Mbps
-	uploadSpeed := (float64(len(data)) * 8) / (elapsed.Seconds() * 1_000_000)
+	uploadSpeed := (float64(len(data)*8) ) / (elapsed.Seconds() * 1_000_000)
 
 	fmt.Printf("Upload Speed: %.2f Mbps\n", uploadSpeed)
 }

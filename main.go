@@ -17,7 +17,7 @@ func main() {
 	}()
 
 	// Run tests
-	internal.RunPingTest()
+	
 	internal.RunICMPPingTest()
 	internal.RunDownlaodTest()
 	internal.RunUploadTest()

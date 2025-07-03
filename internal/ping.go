@@ -2,7 +2,7 @@ package internal
 
 import (
 	"fmt"
-	"net/http"
+	
 	"time"
 
 	"github.com/go-ping/ping"

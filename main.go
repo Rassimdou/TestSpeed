@@ -11,4 +11,8 @@ func main() {
 	RunPingTest()
 	RunDownlaodTest()
 	RunUploadTest()
+
+	server := NewServer()
+	server.Start(":5000")
+
 }

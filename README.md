@@ -77,16 +77,12 @@ go mod tidy
 
 ---
 
-## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
 
 
 ## 📷 Screenshots
 
-![SpeedTest CLI Output](./screenShot/speedtest-output.png)
+![SpeedTest CLI Output](./internal/screenShot/speedtest-output.png)
 
 *Sample output of running the speedTest CLI tool on Windows*
 

@@ -10,7 +10,7 @@ import (
 func RunDownlaodTest() {
 
 	start := time.Now()
-	resp, err := http.Get("https://speed.hetzner.de/10MB.bin")
+	resp, err := http.Get("https://speedtest.tele2.net/10MB.zip") // Valid test file
 	if err != nil {
 		fmt.Println("Error making testing download speed :", err)
 	} else {

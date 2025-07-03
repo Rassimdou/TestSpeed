@@ -4,14 +4,30 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+
+	"github.com/go-ping/ping"
 )
 
-func RunPingTest() {
-	start := time.Now()
-	_, err := http.Get("https://www.google.com")
+
+// ICMP ping using github.com/go-ping/ping
+func RunICMPPingTest() {
+	fmt.Println("Starting ICMP Ping (like speedtest.net)...")
+
+	pinger, err := ping.NewPinger("8.8.8.8") // Use a reliable server, like Google DNS
 	if err != nil {
-		fmt.Println("Error making GET request:", err)
+		fmt.Println("Error creating pinger:", err)
+		return
 	}
-	elapsed := time.Since(start)
-	fmt.Println("Ping :", elapsed.Milliseconds(), "ms")
+	pinger.Count = 3 // Send 3 packets
+	pinger.Timeout = time.Second * 5
+	pinger.SetPrivileged(true) // Required for Windows
+	fmt.Println("Pinging 8.8.8.8 with ICMP...")
+	err = pinger.Run() // Blocks until finished.
+	if err != nil {
+		fmt.Println("Ping error:", err)
+		return
+	}
+	stats := pinger.Statistics()
+	fmt.Printf("ICMP Ping ms: min=%v avg=%v max=%v\n", stats.MinRtt.Milliseconds(), stats.AvgRtt.Milliseconds(), stats.MaxRtt.Milliseconds())
+
 }

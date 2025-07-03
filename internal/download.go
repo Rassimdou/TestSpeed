@@ -26,7 +26,7 @@ func RunDownlaodTest() {
 	}
 
 	elapsed:= time.Since(start)
-	fmt.Printf("Downloaded %d bytes in %.2f seconds\n", bytesDownloaded, elapsed.Seconds())
+
 	speedMbps := (float64(bytesDownloaded) * 8) / (elapsed.Seconds() * 1_000_000)
 	fmt.Printf("Download Speed: %.2f Mbps\n", speedMbps)
 }

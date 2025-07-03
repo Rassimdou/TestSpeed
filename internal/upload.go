@@ -10,15 +10,15 @@ import (
 
 func RunUploadTest() {
 	//Generate 10MB dummy data
-	data := make([]byte, 10*1024*1024) // 10 MB
+	fmt.Println("Starting upload speed test...")
+	data := make([]byte, 50*1024*1024) // 50 MB
 
 	//Wrap data in a reader
 	bodyReader := bytes.NewReader(data)
 
 	start := time.Now()
-
 	//Send POST request
-	resp, err := http.Post("http://localhost:8080/upload", "application/octet-stream", bodyReader)
+	resp, err := http.Post("https://speed.cloudflare.com/__up", "application/octet-stream", bodyReader)
 	if err != nil {
 		fmt.Println("Error uploading data:", err)
 		return
@@ -26,7 +26,10 @@ func RunUploadTest() {
 	defer resp.Body.Close()
 
 	// Discard response body
+	
+
 	io.Copy(io.Discard, resp.Body)
+
 
 	elapsed := time.Since(start)
 

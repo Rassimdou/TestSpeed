@@ -1,8 +1,6 @@
 # SpeedTest
 
-A fast, modern, and cross-platform CLI tool written in Go to measure your internet speed (download, upload, and ping) directly from your terminal. Inspired by speedtest.net, but open-source and privacy-friendly!
-
-![SpeedTest Banner](https://user-images.githubusercontent.com/your-banner.png)
+A  CLI tool written in Go to measure your internet speed (download, upload, and ping) directly from your terminal. Inspired by speedtest.net, !
 
 ---
 
@@ -12,7 +10,7 @@ A fast, modern, and cross-platform CLI tool written in Go to measure your intern
 - **Download Speed Test:** Downloads a large file from Cloudflare's speed test endpoint and calculates your real download bandwidth.
 - **Upload Speed Test:** Uploads a large buffer to Cloudflare's endpoint to measure your upload speed.
 - **Simple CLI:** Just run and get your results instantly—no setup required.
-- **Cross-platform:** Works on Windows, macOS, and Linux.
+
 
 ---
 
@@ -63,8 +61,7 @@ Press Enter to exit...
 - `internal/ping.go` — Implements the ICMP ping test using [go-ping/ping](https://github.com/go-ping/ping).
 - `internal/download.go` — Implements the download speed test using Cloudflare's endpoint.
 - `internal/upload.go` — Implements the upload speed test using Cloudflare's endpoint.
-- `handlers/` — HTTP handlers for file uploads (if extended).
-- `public/` — Static files for testing (e.g., dummy files).
+
 
 ---
 
@@ -86,22 +83,10 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 
-## 📄 License
-
-[MIT](LICENSE)
-
----
-
-## 💡 Credits
-
-- Inspired by [speed.cloudflare.com](https://speed.cloudflare.com/) and [speedtest.net](https://www.speedtest.net/)
-- Built with ❤️ by [Rassimdou](https://github.com/Rassimdou)
-
----
 
 ## 📷 Screenshots
 
-![SpeedTest CLI Output](./screenshots/speedtest-output.png)
+![SpeedTest CLI Output](./screenShot/speedtest-output.png)
 
 *Sample output of running the speedTest CLI tool on Windows*
 

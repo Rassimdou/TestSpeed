@@ -9,7 +9,7 @@ import (
 )
 
 func RunUploadTest() {
-	//Generate 10MB dummy data
+	//Generate dummy data
 	fmt.Println("Starting upload speed test...")
 	data := make([]byte, 50*1024*1024) // 50 MB
 
